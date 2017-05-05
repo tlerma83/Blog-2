@@ -1,0 +1,126 @@
+/*
+html,
+body,
+ul,
+ol, header {
+  margin: 0;
+  padding: 0; }
+*/
+
+/*# sourceMappingURL=style.css.map */
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0 auto;
+    background-color: salmon;
+}
+
+article {
+/*
+    position: relative;
+    top: 30%;
+*/
+/*    margin-top: 5%;*/
+    margin: 5px 5px 5px;
+    background-color: lightpink;
+    border-bottom: 3px inset deeppink;
+    border-radius: 3px;
+    color: aliceblue
+}
+
+header {
+
+    height 15%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: lightcyan;
+    padding: 10px;
+}
+
+nav {
+    background-color: lightcyan;
+}
+
+nav ul li{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+input {
+    border: 2px solid white;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 3px;
+    text-align: center;
+}
+
+#hold-blogs {
+/*    width: 70%;*/
+/*    height: 50%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:space-between;
+}
+
+.newMessageDiv {
+    width: 70%;
+    margin-left: 23%;
+    margin-right: 15%;
+}
+
+.hideNew {
+    display: none;
+}
+
+.testing {
+    display: none !important;
+}
+
+.newEntry {
+    width: 70%;
+    background-color: white;
+}
+
+.section-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-custom {
+  background-color: hsl(0, 100%, 82%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fecccc", endColorstr="#fea3a3");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#fecccc), to(#fea3a3));
+  background-image: -moz-linear-gradient(top, #fecccc, #fea3a3);
+  background-image: -ms-linear-gradient(top, #fecccc, #fea3a3);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fecccc), color-stop(100%, #fea3a3));
+  background-image: -webkit-linear-gradient(top, #fecccc, #fea3a3);
+  background-image: -o-linear-gradient(top, #fecccc, #fea3a3);
+  background-image: linear-gradient(#fecccc, #fea3a3);
+  border-color: #fea3a3 #fea3a3 hsl(0, 100%, 80%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.13);
+  -webkit-font-smoothing: antialiased;
+}
+
+.rounding {
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+

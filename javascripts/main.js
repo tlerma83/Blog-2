@@ -44,23 +44,34 @@ function showBlog (event) {
     console.log("hello second event show blog");
     holdBlogMsg.classList.remove("testing");
     holdMessageClass[0].classList.add("hideNew");
+    Blogging.getAndDisplay();
 
 }
 
 
 var addBTN = document.getElementById("add-BTN").addEventListener("click", function(event){
-    Blogging.getAndDisplay(event);
+    Blogging.getAndDisplay();
 })
-
-
 
 
 var Blogging = (function(origBlog){
 
-    console.log("test input 1", inputfield1);
         origBlog.getAndDisplay = function(event) {
-//            event.target = inputfield1.focus();
-//            inputfield1.value = "";
+
+            var inout1 = inputfield1.value;
+            var inout2 = inputfield2.value;
+            var inout3 = inputfield3.value;
+            var inout4 = inputfield4.value;
+
+            holdBlogMsg.innerHTML +=
+                    `<article>
+                    <h3>${inout1.value}</h3>
+                    <p>${inout4.value}</p>
+                    <footer>${inout2.value}${inout3.value}<footer>
+                    </article>
+                    `
+
+            console.log("did my iffe work? line 64", inout1);
         }
     return origBlog;
 })(Blogging || {});

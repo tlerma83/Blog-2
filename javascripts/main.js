@@ -17,6 +17,7 @@ secondLiEl.addEventListener("click", showBlog);
 //this listens for buttons that hide and display add message field and blog posts
 
 var inputfield1 = document.getElementById("input1");
+inputfield1.value = "";
 var inputfield2 = document.getElementById("input2");
 var inputfield3 = document.getElementById("input3");
 var inputfield4 = document.getElementById("input4");
@@ -44,34 +45,53 @@ function showBlog (event) {
     console.log("hello second event show blog");
     holdBlogMsg.classList.remove("testing");
     holdMessageClass[0].classList.add("hideNew");
-    Blogging.getAndDisplay();
+
 
 }
 
 
 var addBTN = document.getElementById("add-BTN").addEventListener("click", function(event){
     Blogging.getAndDisplay();
+    inputfield1.value = "";
+    inputfield2.value = "";
+    inputfield3.value = "";
+    inputfield4.value = "";
+    inputfield1.focus();
+})
+
+inputfield4.addEventListener("keyup", function(event){
+    if (inputfield4.value != "" && event.keyCode === 13) {
+        console.log(event);
+        console.log("testing keycode");
+        Blogging.getAndDisplay();
+        inputfield1.value = "";
+        inputfield2.value = "";
+        inputfield3.value = "";
+        inputfield4.value = "";
+        inputfield1.focus();
+    }
 })
 
 
 var Blogging = (function(origBlog){
 
         origBlog.getAndDisplay = function(event) {
+            holdBlogMsg.classList.remove("testing");
+//            var inout2 = inputfield2.value;
+//            var inout3 = inputfield3.value;
 
-            var inout1 = inputfield1.value;
-            var inout2 = inputfield2.value;
-            var inout3 = inputfield3.value;
-            var inout4 = inputfield4.value;
-
-            holdBlogMsg.innerHTML +=
+            var rest =
                     `<article>
-                    <h3>${inout1.value}</h3>
-                    <p>${inout4.value}</p>
-                    <footer>${inout2.value}${inout3.value}<footer>
+                    <h3>${inputfield1.value}</h3>
+                    <p>${inputfield4.value}</p>
+                    <footer>${inputfield3.value}  ${inputfield2.value}</footer>
                     </article>
-                    `
+                    `;
+            holdBlogMsg.innerHTML += rest;
+        }
 
-            console.log("did my iffe work? line 64", inout1);
+        origBlog.enterPress = function(event) {
+            console.log(event.target);
         }
     return origBlog;
 })(Blogging || {});
